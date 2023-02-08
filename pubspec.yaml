@@ -39,13 +39,12 @@ dependencies:
   cupertino_icons: ^1.0.2
 
 flutter_native_splash:
-  color: "#cccccc"
-  color_dark: "#cccccc"
+  color: "#e7cfc4"
+  color_dark: "#e7cfc4"
   image: assets/images/logo-development.png
-  branding: assets/images/logo-development.png
   android_12:
-    icon_background_color: "#cccccc"
-    icon_background_color_dark: "#cccccc"
+    icon_background_color: "#e7cfc4"
+    icon_background_color_dark: "#e7cfc4"
 
   web: false
 
