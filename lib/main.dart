@@ -67,12 +67,6 @@ class _MyHomePageState extends State<MyHomePage> {
               children: [
                 GestureDetector(
                   onTap: () => {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) => const CameraMain(),
-                    //   ),
-                    // )
                     Navigator.pushNamed(context, RouteNameInit.cameraMain,
                         arguments: '')
                   },
@@ -86,14 +80,43 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: const Text('Content view 1'),
                   ),
                 ),
-                Container(
-                  alignment: Alignment.center,
-                  width: 150,
-                  height: 150,
-                  decoration: BoxDecoration(
-                      color: Colors.grey,
-                      borderRadius: BorderRadius.circular(12)),
-                  child: const Text('Conten view 1'),
+                GestureDetector(
+                  onTap: () => {
+                    showModalBottomSheet<void>(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Container(
+                          height: 200,
+                          color: Colors.amber,
+                          child: Center(
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              mainAxisSize: MainAxisSize.min,
+                              children: <Widget>[
+                                const Text('Modal BottomSheet'),
+                                ElevatedButton(
+                                  child: const Text('Close BottomSheet'),
+                                  onPressed: () => Navigator.pop(context),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    )
+                  },
+                  child: Container(
+                    alignment: Alignment.center,
+                    width: 150,
+                    height: 150,
+                    decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(12)),
+                    child: const Text(
+                      'Show modal bottom sheet',
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
                 ),
                 Container(
                   alignment: Alignment.center,
